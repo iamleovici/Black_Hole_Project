@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GravityRadiusExpander : MonoBehaviour
 {
     private Vector2 maxScale = new(15f, 15f);
     private Vector2 defaultScale = new(0f, 0f);
+
+    public Image blackFade;
+
     public float expandSpeed = 0.3f;
     public float reduceSpeed = 1f;
 
@@ -19,27 +23,27 @@ public class GravityRadiusExpander : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)) && !isBlackHoleExist)
+        if (!blackFade.isActiveAndEnabled)
         {
-            //Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-            //transform.localPosition = new Vector3(mousePos.x, mousePos.y, 0);
-            NewPosition();
-            isBlackHoleExist = true;
-        }
 
-        if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
-            Expanding();
-            //transform.localScale = Vector2.Lerp(transform.localScale, maxScale, Time.deltaTime * expandSpeed);
+            if ((Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)) && !isBlackHoleExist)
+            {
+                NewPosition();
+                isBlackHoleExist = true;
+            }
+
+            if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
+                Expanding();
 
 
 
-        else if ((Vector2)transform.localScale != defaultScale)
-        {
-            isBlackHoleExist = true;
-            //transform.localScale = Vector2.MoveTowards(transform.localScale, defaultScale, Time.deltaTime * reduceSpeed);
-            Reducing();
-            if ((Vector2)transform.localScale == defaultScale)
-                isBlackHoleExist = false;
+            else if ((Vector2)transform.localScale != defaultScale)
+            {
+                isBlackHoleExist = true;
+                Reducing();
+                if ((Vector2)transform.localScale == defaultScale)
+                    isBlackHoleExist = false;
+            }
         }
     }
 
