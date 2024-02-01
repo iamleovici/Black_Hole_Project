@@ -7,6 +7,8 @@ public class CircleGravity : MonoBehaviour
     public float centerAttractionSpeed = 0.3f;
     public float centreRadius = 0.5f;
 
+    public LayerMask noGravity;
+
     private float gravityRadius;
     private float newGravDir;
 
@@ -17,7 +19,7 @@ public class CircleGravity : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(Input.GetMouseButton(0) || Input.GetMouseButton(1))
+        if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
             ApplyGravity();
         gravityRadius = transform.localScale.x / 2;
     }
@@ -32,6 +34,9 @@ public class CircleGravity : MonoBehaviour
 
             if (rb)
             {
+                if (collider.gameObject.layer != noGravity)
+                    continue;
+
                 Vector2 directionToCenter = (Vector2)transform.position - rb.position;
                 float distance = directionToCenter.magnitude;
 
