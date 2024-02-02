@@ -9,15 +9,10 @@ public class Win : MonoBehaviour
     public Text helperText;
     public Image blackFade;
     public Button nextButon;
-    public int currentSceneIndex;
     public string DefaultText = "TOUCH TO WIN";
 
     public GameObject player;
 
-    private void Start()
-    {
-        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -53,13 +48,5 @@ public class Win : MonoBehaviour
 
         blackFade.gameObject.SetActive(true);
         nextButon.gameObject.SetActive(true);
-    }
-    public void LoadNextScene()
-    {
-        SceneManager.LoadScene(currentSceneIndex +1);
-    }
-    public void RestartScene()
-    {
-        SceneManager.LoadScene(currentSceneIndex);
     }
 }
