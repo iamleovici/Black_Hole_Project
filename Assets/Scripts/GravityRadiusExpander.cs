@@ -58,6 +58,6 @@ public class GravityRadiusExpander : MonoBehaviour
     void NewPosition()
     {
         Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        transform.localPosition = new Vector3(mousePos.x, mousePos.y, 0);
+        transform.localPosition = new Vector3(mousePos.x, mousePos.y, 1);
     }
 }
