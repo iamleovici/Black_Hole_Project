@@ -11,15 +11,35 @@ public class CircleGravity : MonoBehaviour
 
     private float gravityRadius;
     private float newGravDir;
+    private Vector2 initialInputPos;
+
 
     private void Update()
     {
-        newGravDir = Input.GetMouseButton(0) ? -1f : Input.GetMouseButton(1) ? 1f : 0f;
+        if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
+        {
+            if (Input.GetMouseButtonDown(0))
+                initialInputPos = Input.mousePosition;
+            else if (Input.touchCount > 0)
+                initialInputPos = Input.GetTouch(0).position;
+        }
+
+        if (Input.GetMouseButton(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved))
+        {
+            Vector2 currentInputPos;
+            if (Input.GetMouseButton(0))
+                currentInputPos = Input.mousePosition;
+            else
+                currentInputPos = Input.GetTouch(0).position;
+
+            float distanceX = currentInputPos.x - initialInputPos.x;
+            newGravDir = distanceX > 0 ? 1 : -1;
+        }
     }
 
     void FixedUpdate()
     {
-        if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
+        if (Input.GetMouseButton(0) || (Input.touchCount >0 && Input.GetTouch(0).phase == TouchPhase.Moved))
             ApplyGravity();
         gravityRadius = transform.localScale.x / 2;
     }

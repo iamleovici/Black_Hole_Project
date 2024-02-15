@@ -26,13 +26,16 @@ public class GravityRadiusExpander : MonoBehaviour
         if (!blackFade.isActiveAndEnabled)
         {
 
-            if ((Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)) && !isBlackHoleExist)
+            if ((Input.GetMouseButtonDown(0)
+                || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
+                && !isBlackHoleExist)
             {
                 NewPosition();
                 isBlackHoleExist = true;
             }
 
-            if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
+            if (Input.GetMouseButton(0)
+                || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved))
                 Expanding();
 
 
@@ -57,7 +60,15 @@ public class GravityRadiusExpander : MonoBehaviour
     }
     void NewPosition()
     {
-        Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        transform.localPosition = new Vector3(mousePos.x, mousePos.y, 1);
+        Vector3 newPosition;
+        if (Input.touchCount > 0)
+        {
+            newPosition = mainCamera.ScreenToWorldPoint(Input.GetTouch(0).position);
+        }
+        else
+        {
+            newPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        }
+        transform.position = new Vector3(newPosition.x, newPosition.y, 1);
     }
 }
