@@ -24,8 +24,6 @@ public class MainMenu : MonoBehaviour
     public void RestartScene()
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        //lastCompletedLevel = currentSceneIndex;
-        //PlayerPrefs.SetInt("LastCompletedLevel", lastCompletedLevel);
         SceneManager.LoadScene(currentSceneIndex);
     }
 
@@ -33,17 +31,8 @@ public class MainMenu : MonoBehaviour
     {
         string name = button.name;
         int intName = int.Parse(name);
-        //lastCompletedLevel = intName;
-        //PlayerPrefs.SetInt("LastCompletedLevel", lastCompletedLevel);
         SceneManager.LoadScene(intName);
     }
-
-    //public void PlayFirstScene()
-    //{
-    //    lastCompletedLevel = 1;
-    //    PlayerPrefs.SetInt("LastCompletedLevel", lastCompletedLevel);
-    //    SceneManager.LoadScene(sceneBuildIndex: 1);
-    //}
 public void PlayLastScene()
     {
         PlayerPrefs.SetInt("LastCompletedLevel", lastCompletedLevel);
@@ -54,9 +43,4 @@ public void PlayLastScene()
     {
         SceneManager.LoadScene(0);
     }
-
-    //public void QuitGame()
-    //{
-    //    Application.Quit();
-    //}
 }

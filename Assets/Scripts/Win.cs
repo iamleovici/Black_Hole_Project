@@ -8,16 +8,20 @@ public class Win : MonoBehaviour
     public Text helperText;
     public Image blackFade;
     public Button nextButon;
-    public string DefaultText = "TOUCH TO WIN";
 
     public GameObject player;
 
+    private void Start()
+    {
+       helperText.text = Language.winHelperTextMain;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject == player)
         {
-            helperText.text = "STAY HERE";
+            helperText.text = Language.winHelperTextTouched;
+
             StartCoroutine(WinMessage());
         }
     }
@@ -27,7 +31,8 @@ public class Win : MonoBehaviour
         if (other.gameObject == player)
         {
             if (helperText != null)
-                helperText.text = DefaultText;
+                helperText.text = Language.winHelperTextMain;
+
             if (timerText != null)
                 timerText.text = "";
             StopAllCoroutines();
@@ -43,7 +48,8 @@ public class Win : MonoBehaviour
         yield return new WaitForSeconds(1);
         timerText.text = "3";
         yield return new WaitForSeconds(1);
-        timerText.text = "You Win!";
+        timerText.text = Language.winHelperTextWin;
+
 
         blackFade.gameObject.SetActive(true);
         nextButon.gameObject.SetActive(true);
