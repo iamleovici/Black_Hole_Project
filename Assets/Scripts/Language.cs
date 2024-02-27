@@ -8,6 +8,8 @@ public class Language : MonoBehaviour
     public static string winHelperTextMain;
     public static string winHelperTextTouched;
     public static string winHelperTextWin;
+    public static string emailCopied;
+    public static string emailHover;
 
     public string language;
 
@@ -25,6 +27,8 @@ public class Language : MonoBehaviour
         winHelperTextMain = "бярюмэ ячдю";
         winHelperTextTouched = "ярни гдеяэ";
         winHelperTextWin = "онаедю!";
+        emailHover = "яйнохпнбюрэ";
+        emailCopied = "янохпнбюмн";
         PlayerPrefs.SetString("language", "ru");
     }
     public void SetEnLanguage()
@@ -32,6 +36,9 @@ public class Language : MonoBehaviour
         winHelperTextMain = "PLACE HERE";
         winHelperTextTouched = "STAY HERE";
         winHelperTextWin = "You Win!";
+        emailHover = "COPY TO CLIPBOARD";
+        emailCopied = "COPIED";
+
         PlayerPrefs.SetString("language", "en");
 
     }
