@@ -10,6 +10,7 @@ public class Language : MonoBehaviour
     public static string winHelperTextWin;
     public static string emailCopied;
     public static string emailHover;
+    public static string resetConfirmation;
 
     public string language;
 
@@ -29,15 +30,17 @@ public class Language : MonoBehaviour
         winHelperTextWin = "онаедю!";
         emailHover = "яйнохпнбюрэ";
         emailCopied = "янохпнбюмн";
+        resetConfirmation = "сдюкхрэ опнцпеяя?";
         PlayerPrefs.SetString("language", "ru");
     }
     public void SetEnLanguage()
     {
         winHelperTextMain = "PLACE HERE";
         winHelperTextTouched = "STAY HERE";
-        winHelperTextWin = "You Win!";
+        winHelperTextWin = "YOU WIN!";
         emailHover = "COPY TO CLIPBOARD";
         emailCopied = "COPIED";
+        resetConfirmation = "RESET PROGRESS?";
 
         PlayerPrefs.SetString("language", "en");
 
