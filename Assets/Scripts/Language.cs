@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Language : MonoBehaviour
 {
@@ -11,6 +8,7 @@ public class Language : MonoBehaviour
     public static string emailCopied;
     public static string emailHover;
     public static string resetConfirmation;
+    public static string endText;
 
     public string language;
 
@@ -31,6 +29,8 @@ public class Language : MonoBehaviour
         emailHover = "яйнохпнбюрэ";
         emailCopied = "янохпнбюмн";
         resetConfirmation = "сдюкхрэ опнцпеяя?";
+        endText = "йнмеж!";
+
         PlayerPrefs.SetString("language", "ru");
     }
     public void SetEnLanguage()
@@ -41,6 +41,7 @@ public class Language : MonoBehaviour
         emailHover = "COPY TO CLIPBOARD";
         emailCopied = "COPIED";
         resetConfirmation = "RESET PROGRESS?";
+        endText = "THE END!";
 
         PlayerPrefs.SetString("language", "en");
 

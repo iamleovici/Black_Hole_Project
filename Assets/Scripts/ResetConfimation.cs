@@ -8,5 +8,11 @@ public class ResetConfimation : MonoBehaviour
     private void Start()
     {
         text.text = Language.resetConfirmation;
+
+    }
+    private void Update()
+    {
+        text.text = Language.resetConfirmation;
+
     }
 }
