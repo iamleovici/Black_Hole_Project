@@ -3521,6 +3521,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1689694494 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6296300450971864880, guid: 0dbf2c7703b5d1b49b9bca7e2549d56e, type: 3}
+  m_PrefabInstance: {fileID: 1689694490}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1729743421
 GameObject:
   m_ObjectHideFlags: 0
@@ -3997,6 +4002,7 @@ MonoBehaviour:
   blackFade: {fileID: 1689694491}
   nextButon: {fileID: 1689694492}
   player: {fileID: 1208521443}
+  timerSound: {fileID: 1689694494}
 --- !u!61 &1953495654
 BoxCollider2D:
   m_ObjectHideFlags: 0

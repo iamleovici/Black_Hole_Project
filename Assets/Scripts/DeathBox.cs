@@ -14,6 +14,7 @@ public class DeathBox : MonoBehaviour
 
     void DestroyAndShowEffects(GameObject obj)
     {
+        AudioManager.PopSFX();
         Vector3 destroyPosition = obj.transform.position;
         Destroy(obj);
         Instantiate(vfx, destroyPosition, Quaternion.identity);
@@ -23,6 +24,7 @@ public class DeathBox : MonoBehaviour
 
     void RestartApperas()
     {
+        AudioManager.LoseSFX();
         restartButton.SetActive(true);
     }
 }

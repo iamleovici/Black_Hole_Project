@@ -904,6 +904,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 334501550779207633, guid: 60f1b5bbc39085243964f9fee21750b8, type: 3}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: UIClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &418059972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2338,6 +2350,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1526978653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6296300450971864880, guid: 0dbf2c7703b5d1b49b9bca7e2549d56e, type: 3}
+  m_PrefabInstance: {fileID: 2069279336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1592878996 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1952598662544755907, guid: a7c4558b52d40204eaf830f001acc14e, type: 3}
@@ -2599,6 +2616,7 @@ MonoBehaviour:
   blackFade: {fileID: 2069279337}
   nextButon: {fileID: 2069279338}
   player: {fileID: 988649218}
+  timerSound: {fileID: 1526978653}
 --- !u!61 &1953495654
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2981,6 +2999,22 @@ PrefabInstance:
     - target: {fileID: 991686912376020759, guid: 7a14b2512f5baea49b25699b39e36998, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051092563896997848, guid: 7a14b2512f5baea49b25699b39e36998, type: 3}
+      propertyPath: maxPitch
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051092563896997848, guid: 7a14b2512f5baea49b25699b39e36998, type: 3}
+      propertyPath: minPitch
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898185302774422182, guid: 7a14b2512f5baea49b25699b39e36998, type: 3}
+      propertyPath: maxVolume
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898185302774422182, guid: 7a14b2512f5baea49b25699b39e36998, type: 3}
+      propertyPath: volumeCompressor
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7276963695186906100, guid: 7a14b2512f5baea49b25699b39e36998, type: 3}
       propertyPath: blackHole

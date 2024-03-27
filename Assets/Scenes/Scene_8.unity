@@ -2301,6 +2301,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1697950974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6296300450971864880, guid: 0dbf2c7703b5d1b49b9bca7e2549d56e, type: 3}
+  m_PrefabInstance: {fileID: 1697950970}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1794276175 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4574260248176203489, guid: dd9456aac1979564b8172edb7add4ab5, type: 3}
@@ -2426,6 +2431,7 @@ MonoBehaviour:
   blackFade: {fileID: 1697950971}
   nextButon: {fileID: 1697950972}
   player: {fileID: 2071285966}
+  timerSound: {fileID: 1697950974}
 --- !u!61 &1953495654
 BoxCollider2D:
   m_ObjectHideFlags: 0

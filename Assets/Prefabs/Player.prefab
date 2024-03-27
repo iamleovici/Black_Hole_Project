@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 4669135312505583623}
   - component: {fileID: 1662073632989271066}
   - component: {fileID: 7276963695186906100}
+  - component: {fileID: 1051092563896997848}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -251,6 +252,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CenterOfMassTransform: {fileID: 1109302116987519863}
   blackHole: {fileID: 0}
+--- !u!114 &1051092563896997848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991686912376020759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8a59f668c82240b32f4e851579db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeCompressor: 10
+  maxVolume: 5
+  minPitch: 0.99
+  maxPitch: 1.01
 --- !u!1 &3744762763748375460
 GameObject:
   m_ObjectHideFlags: 0

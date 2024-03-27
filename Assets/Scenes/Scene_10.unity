@@ -1325,26 +1325,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelMenuCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 3850439634896165500, guid: 0dbf2c7703b5d1b49b9bca7e2549d56e, type: 3}
-      propertyPath: m_IgnoreReversedGraphics
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5443412072290788416, guid: 0dbf2c7703b5d1b49b9bca7e2549d56e, type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9189467083374374398, guid: 0dbf2c7703b5d1b49b9bca7e2549d56e, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 292851344}
-    - target: {fileID: 9189467083374374398, guid: 0dbf2c7703b5d1b49b9bca7e2549d56e, type: 3}
-      propertyPath: m_PixelPerfect
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9189467083374374398, guid: 0dbf2c7703b5d1b49b9bca7e2549d56e, type: 3}
-      propertyPath: m_UpdateRectTransformForStandalone
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1383,6 +1367,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &706658469 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6296300450971864880, guid: 0dbf2c7703b5d1b49b9bca7e2549d56e, type: 3}
+  m_PrefabInstance: {fileID: 706658465}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &750360380
 GameObject:
   m_ObjectHideFlags: 0
@@ -2857,6 +2846,7 @@ MonoBehaviour:
   blackFade: {fileID: 706658466}
   nextButon: {fileID: 706658467}
   player: {fileID: 50109423}
+  timerSound: {fileID: 706658469}
 --- !u!61 &1953495654
 BoxCollider2D:
   m_ObjectHideFlags: 0

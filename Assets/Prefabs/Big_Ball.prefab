@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6000610515064740964}
   - component: {fileID: 7944310767467971381}
   - component: {fileID: 37354601465569}
+  - component: {fileID: 7535079340326202583}
   m_Layer: 0
   m_Name: Big_Ball
   m_TagString: Item
@@ -148,3 +149,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &7535079340326202583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342754169567144373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8a59f668c82240b32f4e851579db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeCompressor: 10
+  maxVolume: 5
+  minPitch: 1
+  maxPitch: 1.05

@@ -10,6 +10,7 @@ public class Win : MonoBehaviour
     public Button nextButon;
 
     public GameObject player;
+    public GameObject timerSound;
 
     private void Start()
     {
@@ -21,7 +22,7 @@ public class Win : MonoBehaviour
         if (other.gameObject == player)
         {
             helperText.text = Language.winHelperTextTouched;
-
+            timerSound.gameObject.SetActive(true);
             StartCoroutine(WinMessage());
         }
     }
@@ -31,10 +32,13 @@ public class Win : MonoBehaviour
         if (other.gameObject == player)
         {
             if (helperText != null)
+            {
                 helperText.text = Language.winHelperTextMain;
+            }
 
             if (timerText != null)
                 timerText.text = "";
+            timerSound.gameObject.SetActive(false);
             StopAllCoroutines();
         }
     }
@@ -49,6 +53,7 @@ public class Win : MonoBehaviour
         timerText.text = "3";
         yield return new WaitForSeconds(1);
         timerText.text = Language.winHelperTextWin;
+        AudioManager.WinSFX();
 
 
         blackFade.gameObject.SetActive(true);
