@@ -38,7 +38,8 @@ public class Win : MonoBehaviour
 
             if (timerText != null)
                 timerText.text = "";
-            timerSound.gameObject.SetActive(false);
+            if(timerSound != null)
+                timerSound.gameObject.SetActive(false);
             StopAllCoroutines();
         }
     }
@@ -54,9 +55,12 @@ public class Win : MonoBehaviour
         yield return new WaitForSeconds(1);
         timerText.text = Language.winHelperTextWin;
         AudioManager.WinSFX();
+        PlayPause.PauseGame();
 
 
         blackFade.gameObject.SetActive(true);
         nextButon.gameObject.SetActive(true);
+
+        
     }
 }

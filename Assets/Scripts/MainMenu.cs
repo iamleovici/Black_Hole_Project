@@ -23,28 +23,33 @@ public class MainMenu : MonoBehaviour
             PlayerPrefs.SetInt("LastCompletedLevel", lastCompletedLevel);
         }
         SceneManager.LoadScene(nextLevel);
+        PlayPause.ResumeGame();
     }
 
     public void RestartScene()
     {
+        PlayPause.ResumeGame();
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }
 
     public void LoadSelectedLevel(Button button)
     {
+        PlayPause.ResumeGame();
         string name = button.name;
         int intName = int.Parse(name);
         SceneManager.LoadScene(intName);
     }
     public void PlayLastScene()
     {
+        PlayPause.ResumeGame();
         PlayerPrefs.SetInt("LastCompletedLevel", lastCompletedLevel);
         SceneManager.LoadScene(sceneBuildIndex: lastCompletedLevel);
     }
 
     public void GoToMainMenu()
     {
+        PlayPause.ResumeGame();
         SceneManager.LoadScene(0);
     }
 }

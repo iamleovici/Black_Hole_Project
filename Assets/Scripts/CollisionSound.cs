@@ -3,7 +3,7 @@ using UnityEngine;
 public class CollisionSound : MonoBehaviour
 {
     public float volumeCompressor = 10f;
-    public float maxVolume = 5f;
+    public float maxVolume = 3f;
 
     public float minPitch;
     public float maxPitch;
@@ -16,7 +16,9 @@ public class CollisionSound : MonoBehaviour
         float pitch = Random.Range(minPitch, maxPitch);
 
         if (volume > maxVolume)
+        {
             volume = maxVolume;
+        }
         AudioManager.HitSFX(volume, pitch);
     }
 }

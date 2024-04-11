@@ -7,6 +7,8 @@ public class GravityRadiusExpander : MonoBehaviour
     private Vector2 defaultScale = new(0f, 0f);
 
     public Image blackFade;
+    public AudioSource sfx;
+
 
     public float expandSpeed = 0.3f;
     public float reduceSpeed = 1f;
@@ -18,6 +20,7 @@ public class GravityRadiusExpander : MonoBehaviour
 
     private void Start()
     {
+        sfx = GetComponent<AudioSource>();
         mainCamera = Camera.main;
     }
 
@@ -26,17 +29,20 @@ public class GravityRadiusExpander : MonoBehaviour
         if (!blackFade.isActiveAndEnabled)
         {
 
-            if ((Input.GetMouseButtonDown(0)
-                || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
-                && !isBlackHoleExist)
+            if ((Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)) && !isBlackHoleExist)
             {
                 NewPosition();
                 isBlackHoleExist = true;
+                //sfx.Play();
+                sfx.mute = false;
             }
 
-            if (Input.GetMouseButton(0)
-                || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved))
+            if (Input.GetMouseButton(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved))
+            {
                 Expanding();
+
+            }
+
 
 
 
@@ -45,11 +51,16 @@ public class GravityRadiusExpander : MonoBehaviour
                 isBlackHoleExist = true;
                 Reducing();
                 if ((Vector2)transform.localScale == defaultScale)
+                {
                     isBlackHoleExist = false;
+                    //sfx.Stop();
+                    sfx.mute = true;
+                }
             }
         }
     }
 
+    
     void Expanding()
     {
         transform.localScale = Vector2.Lerp(transform.localScale, maxScale, Time.deltaTime * expandSpeed);
